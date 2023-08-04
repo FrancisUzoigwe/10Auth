@@ -8,6 +8,7 @@ import HomePage from "../Pages/Home/HomePage";
 import SecondLayout from "../Pages/Auth/SecondLayout";
 import Signin2 from "../Pages/Auth/Signin2";
 import Signup2 from "../Pages/Auth/Signup2";
+import MainLayout from "../Components/Common/MainLayout";
 
 export const mainRoute = createBrowserRouter([
     {
@@ -35,8 +36,14 @@ export const mainRoute = createBrowserRouter([
         ]
     },
     {
-        element: <HomePage/>,
-        path: "/home"
+        element: <MainLayout/>,
+        path: "/home",
+        children: [
+            {
+                index: true,
+                element: <HomePage/>
+            }
+        ]
     },
     {
         element: <SecondLayout/>,
