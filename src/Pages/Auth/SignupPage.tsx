@@ -7,11 +7,10 @@ import { MdWifiPassword } from "react-icons/md";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 const SignupPage = () => {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const Schema = yup.object({
     name: yup.string().required(),
     email: yup.string().required(),
@@ -30,9 +29,9 @@ const SignupPage = () => {
 
   const onHandleSubmit = handleSubmit(async (data: any) => {
     const { name, email, password } = data;
-    console.log(data)
-    navigate("/sign/signin")
-    reset()
+    console.log(data);
+    navigate("/sign/signin");
+    reset();
   });
   return (
     <div>
@@ -46,7 +45,14 @@ const SignupPage = () => {
                 </Icon>
                 <Text>Sign Up</Text>
               </TopLeft>
-              <TopRight to="/sign/signin" style={{ cursor: "pointer", transition: "all 350ms" , textDecoration: "none"}}>
+              <TopRight
+                to="/sign/signin"
+                style={{
+                  cursor: "pointer",
+                  transition: "all 350ms",
+                  textDecoration: "none",
+                }}
+              >
                 <Icon>
                   <BiSolidUserPlus size={20} color="#7e137e" />
                 </Icon>
@@ -242,7 +248,6 @@ const Holder = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 `;
 
 const Main = styled.div`
